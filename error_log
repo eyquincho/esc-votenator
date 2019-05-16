@@ -1,0 +1,196 @@
+[12-May-2017 19:22:08 America/Chicago] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home4/koiora/public_html/muruais/esc/votar.php on line 70
+[12-May-2017 19:22:28 America/Chicago] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'koiora_admin' (0) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 22
+[12-May-2017 19:22:28 America/Chicago] PHP Warning:  mysqli_connect(): (HY000/2005): Unknown MySQL server host 'koiora_admin' (0) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 12
+[12-May-2017 19:23:26 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 22
+[12-May-2017 19:23:26 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 12
+[12-May-2017 19:23:41 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 22
+[12-May-2017 19:23:41 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 12
+[12-May-2017 19:23:42 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 22
+[12-May-2017 19:23:42 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 12
+[12-May-2017 19:23:59 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 22
+[12-May-2017 19:23:59 America/Chicago] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'koiora_admin'@'localhost' (using password: YES) in /home4/koiora/public_html/muruais/esc/php/conDB.php on line 12
+[13-May-2017 07:40:31 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 15
+[13-May-2017 08:21:29 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/koiora/public_html/muruais/esc/grupo.php on line 122
+[13-May-2017 08:21:31 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home4/koiora/public_html/muruais/esc/grupo.php on line 122
+[13-May-2017 08:22:22 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 15
+[13-May-2017 08:23:28 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 15
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 08:44:05 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/koiora/public_html/muruais/esc/grupo.php on line 94
+[13-May-2017 09:09:11 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 47
+[13-May-2017 09:11:20 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 47
+[13-May-2017 09:13:12 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 47
+[13-May-2017 09:14:01 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 47
+[13-May-2017 09:14:36 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 47
+[13-May-2017 09:16:35 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 48
+[13-May-2017 09:18:05 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 48
+[13-May-2017 09:18:15 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 48
+[13-May-2017 09:43:19 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 48
+[13-May-2017 09:43:22 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 48
+[13-May-2017 10:18:40 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 50
+[13-May-2017 10:19:46 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 50
+[13-May-2017 10:23:58 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 50
+[13-May-2017 10:24:32 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 50
+[13-May-2017 10:25:21 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 50
+[13-May-2017 11:28:24 America/Chicago] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home4/koiora/public_html/muruais/esc/grupo.php on line 221
+[13-May-2017 11:28:47 America/Chicago] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 267911168 bytes) in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 11:29:18 America/Chicago] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 267911168 bytes) in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 11:39:15 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 11:40:17 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 11:40:24 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 11:40:33 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 11:41:29 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 12:27:54 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:28:01 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:28:18 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:28:45 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:29:07 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:29:33 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:30:22 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home4/koiora/public_html/muruais/esc/grupo.php on line 230
+[13-May-2017 12:30:24 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home4/koiora/public_html/muruais/esc/grupo.php on line 230
+[13-May-2017 12:30:33 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:30:38 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:30:53 America/Chicago] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:32:04 America/Chicago] PHP Parse error:  syntax error, unexpected '?>' in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:32:05 America/Chicago] PHP Parse error:  syntax error, unexpected '?>' in /home4/koiora/public_html/muruais/esc/grupo.php on line 227
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:34:12 America/Chicago] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in /home4/koiora/public_html/muruais/esc/grupo.php on line 223
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:53:57 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 224
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:23 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 16
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 12:57:25 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 225
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 20
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231
+[13-May-2017 13:04:54 America/Chicago] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home4/koiora/public_html/muruais/esc/grupo.php on line 231

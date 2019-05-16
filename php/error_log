@@ -1,0 +1,5 @@
+[13-May-2017 06:26:45 America/Chicago] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home4/koiora/public_html/muruais/esc/php/process.php on line 49
+[13-May-2017 06:27:50 America/Chicago] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home4/koiora/public_html/muruais/esc/php/process.php on line 49
+[13-May-2017 06:28:07 America/Chicago] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home4/koiora/public_html/muruais/esc/php/process.php on line 49
+[13-May-2017 06:28:25 America/Chicago] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home4/koiora/public_html/muruais/esc/php/process.php on line 49
+[13-May-2017 06:36:36 America/Chicago] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION), expecting ',' or ';' in /home4/koiora/public_html/muruais/esc/php/process.php on line 12
