@@ -21,8 +21,8 @@ $votos_totales = mysqli_num_rows($query_rows);
 $sql_pass = "SELECT `pass`, `nombre_grupo` FROM `esc_grupos` WHERE `id_grupo` ='".$_GET['id']."'";
 $cons_pass = mysqli_query($_SESSION['con'],$sql_pass);
 while($row_pass = mysqli_fetch_array($cons_pass)){
-$pass_actual = $row_pass[0];
-$name_group = $row_pass[1];
+	$pass_actual = $row_pass[0];
+	$name_group = $row_pass[1];
 }
 
 //FUNCION PARA EXTRAER EL RESUMEN DE VOTOS DE LA BASE DE DATOS
@@ -49,7 +49,7 @@ function GuardarVotos(){
 			$array_duplicados = array($p12, $p9, $p8, $p7, $p6, $p5, $p4, $p3, $p2, $p1);
 			if(count(array_unique($array_duplicados))<count($array_duplicados))
 				{
-					echo "<div class=\"alert alert-warning\" role=\"alert\">No puedes votar por el mismo pais dos veces</div>";
+					echo "<div class=\"alert alert-danger\" role=\"alert\">No puedes votar por el mismo pais dos veces</div>";
 				}else{
 			
 			//Vemos si el usuario ya ha votado
@@ -87,6 +87,7 @@ function GuardarVotos(){
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Eurovision - <?php echo $name_group; ?></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/theme.bootstrap_4.css">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </head>
     <body>
@@ -96,17 +97,17 @@ function GuardarVotos(){
 			<h1>ESC by <?php echo $name_group; ?></h1>
 		</div>
 		<div class="card-block">
-		<br />
-		Envia la dirección de esta página a quien quieras, para que pueda participar
-		
-			<?php 
+		<?php 
 			//Arrancamos todas las funciones que sean necesarias
 			GuardarVotos();
-			?>
-			<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#ViewCountries"><i class="fa fa-globe " aria-hidden="true"> Ver paises participantes</i></button>
-			<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#NewVoto"><i class="fa fa-envelope " aria-hidden="true"> Añade un nuevo voto</i></button>
-			<button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#ViewClas"><i class="fa fa-signal " aria-hidden="true"> Ver clasificación</i></button>
-			
+		?>
+			<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#ViewCountries"><i class="fa fa-globe" aria-hidden="true"> Ver paises participantes</i></button>
+			<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#NewVoto"><i class="fa fa-envelope" aria-hidden="true"> Añade un nuevo voto</i></button>
+			<button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#ViewClas"><i class="fa fa-signal" aria-hidden="true"> Ver clasificación</i></button>
+		
+		<center><strong>Envia la dirección de esta página a quien quieras, para que pueda participar, o escanea este QR.</strong></center>
+		<center><img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https%3A%2F%2Fwww.muruais.com%2Fesc%2Fgrupo.php%3Fid%3D<?php echo $id_grupo; ?>&choe=UTF-8" title="Codigo QR para compartir" /></center>
+		
 		<!-- Modal añadir voto -->
 		<div class="modal fade" id="NewVoto" tabindex="-1" role="dialog" aria-labelledby="CabeceraVotar" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
@@ -135,7 +136,7 @@ function GuardarVotos(){
 							<label class="sr-only" for="<?php echo $valor; ?>puntos"><?php echo $valor; ?> puntos</label>
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-addon"><?php echo $valor; ?></div>
-								<select class="form-control" name="<?php echo $valor; ?>puntos" required>
+								<select class="form-control select" name="<?php echo $valor; ?>puntos" required>
 									<option value="">Le doy mis <?php echo $valor;?> puntos a...</option>
 									<?php
 										foreach ($paises as $i) {
@@ -174,7 +175,7 @@ function GuardarVotos(){
 				  <thead>
 					<tr>
 					  <th>Pais</th>
-					  <th><strong>Artista</strong></br />Canción</th>
+					  <th><strong>Artista</strong><br/>Canción</th>
 					  <th>Video</th>
 					</tr>
 				  </thead>
@@ -186,8 +187,8 @@ function GuardarVotos(){
 					?>
 				  	<tr>
 						<th scope="row"><img src="flags/<?php echo $pais->pais; ?>.png"/> <?php echo $pais->pais; ?></th>
-						<th><strong><?php echo $pais->artista; ?></strong></br /><?php echo $pais->cancion; ?></th>
-						<td><a class="btn btn-danger" href="<?php echo $pais->video; ?>"><i class="fa fa-youtube-play"></i></a></td>
+						<th><strong><?php echo $pais->artista; ?></strong><br/><?php echo $pais->cancion; ?></th>
+						<td><a class="btn btn-danger" href="<?php echo $pais->video; ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></td>
 					</tr>					
 						<?php }?>
 				  </tbody>
@@ -209,10 +210,10 @@ function GuardarVotos(){
 				<h4 class="modal-title" id="CabeceraNewPlayer">Clasificación</h4>
 			  </div>
 			<div class="modal-body">
-				<table id="clasificacion" class="table tablesorter">
+				<table id="clasificacion" class="table">
 				  <thead>
 					<tr>
-					  <th>Puesto</th>
+					  <th>Bandera</th>
 					  <th>Pais</th>
 					  <th>Puntos</th>
 					</tr>
@@ -220,20 +221,20 @@ function GuardarVotos(){
 				  <tbody>
 					<?php
 					$ix=1;
-					while ($ix<=26){
+					while ($ix<=18){
 						$sql_paises="SELECT `pais` FROM $tabla_paises WHERE `id` = $ix";
 						$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
-						while ($pais = mysqli_fetch_array($result_paises)){
-							$nombre_pais = $pais[0];
-						}
+							while ($pais = mysqli_fetch_array($result_paises)){
+								$nombre_pais = $pais[0];
+							}
 						$sql_puntos="SELECT Sum(`$ix`) FROM `$tabla`";
 						$result_puntos=mysqli_query($_SESSION['con'], $sql_puntos);
-						while ($puntos = mysqli_fetch_array($result_puntos)){
-							$puntos_final = $puntos[0];
-						}
+							while ($puntos = mysqli_fetch_array($result_puntos)){
+								$puntos_final = $puntos[0];
+							}
 					?>	
 					<tr>
-						<td><?php echo $ix; ?></td>
+						<td><img src="flags/<?php echo $nombre_pais; ?>.png"/></td>
 						<td><?php echo $nombre_pais; ?></td>
 						<td><?php echo $puntos_final; ?></td>
 					</tr>
@@ -254,27 +255,36 @@ function GuardarVotos(){
 	</div>
 	</div>
 	</div>
-	<script>
-	$(document).ready(function() 
-    { 
-        $("#clasificacion").tablesorter(); 
-    } 
-); 
-   
-	</script>
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="jquery.tablesorter.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap4.min.js"></script>
+	<script src="js/tablas-esc.js"></script>
 	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-6978317-28', 'auto');
-  ga('send', 'pageview');
-
-</script>
+		  ga('create', 'UA-6978317-29', 'auto');
+		  ga('send', 'pageview');
+	
+		$('select').change(function() {
+			var myOpt = [];
+			$("select").each(function () {
+				myOpt.push($(this).val());
+			});
+			$("select").each(function () {
+				$(this).find("option").prop('hidden', false);
+				var sel = $(this);
+				$.each(myOpt, function(key, value) {
+					if((value != "") && (value != sel.val())) {
+						sel.find("option").filter('[value="' + value +'"]').prop('hidden', true);
+					}
+				});
+			});
+		});
+	</script>
     </body>
 </html>

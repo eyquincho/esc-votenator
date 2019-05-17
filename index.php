@@ -25,14 +25,13 @@
 		<br />
         <input type="text" id="inputNombre" name="inputNombre" class="form-control" placeholder="Nombre del grupo" required>
         <br />
-        <input type="password" id="inputPass" name="inputPass" class="form-control" placeholder="Contraseña" required>
+        <!-- <input type="password" id="inputPass" name="inputPass" class="form-control" placeholder="Contraseña">
         <br />
-        <input type="password" id="inputPassRep" name="inputPassRep" class="form-control" placeholder="Repite contraseña" required>
-		<br />
+        <input type="password" id="inputPassRep" name="inputPassRep" class="form-control" placeholder="Repite contraseña">
+		<br />-->
         <button class="btn btn-lg btn-primary btn-block" type="submit">Crear</button>
 		<p>Al crear un nuevo grupo obtendrás un enlace único para invitar a participar a quien tú quieras. </p>
 		<p>Si quieres unirte a un grupo ya creado, utiliza el enlace que te enviará el creador</p>
-		<p>Al crear un grupo, aceptas las <a>condiciones</a></p>
 	  </form>
 		
     </div>
