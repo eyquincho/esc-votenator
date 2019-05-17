@@ -11,24 +11,22 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="estilo.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
   </head>
 
   <body>
 
     <div class="container">
-
+	
       <form class="form-signin" enctype="multipart/form-data" id="envio" name="crear_grupo" action="php/process.php" method="post" oninput='inputPassRep.setCustomValidity(inputPass.value != inputPassRep.value ? "Las contraseñas no coinciden." : "")'>
-        <h2 class="form-signin-heading">Crea un grupo</h2>
-        <br />
+        <img src="img/euro-logo.png" />
+		<br/>
+		<h2 class="form-signin-heading">Crea un grupo</h2>
+        <br/>
 		<label for="inputNombre" class="sr-only">Nombre del grupo</label>
-		<br />
+		<br/>
         <input type="text" id="inputNombre" name="inputNombre" class="form-control" placeholder="Nombre del grupo" required>
-        <br />
-        <!-- <input type="password" id="inputPass" name="inputPass" class="form-control" placeholder="Contraseña">
-        <br />
-        <input type="password" id="inputPassRep" name="inputPassRep" class="form-control" placeholder="Repite contraseña">
-		<br />-->
+        <br/>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Crear</button>
 		<p>Al crear un nuevo grupo obtendrás un enlace único para invitar a participar a quien tú quieras. </p>
 		<p>Si quieres unirte a un grupo ya creado, utiliza el enlace que te enviará el creador</p>
