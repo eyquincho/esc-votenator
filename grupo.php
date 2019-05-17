@@ -221,7 +221,7 @@ function GuardarVotos(){
 				  <tbody>
 					<?php
 					$ix=1;
-					while ($ix<=18){
+					while ($ix<=26){
 						$sql_paises="SELECT `pais` FROM $tabla_paises WHERE `id` = $ix";
 						$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
 							while ($pais = mysqli_fetch_array($result_paises)){
