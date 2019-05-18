@@ -20,7 +20,7 @@ $cons_name = mysqli_query($_SESSION['con'],$sql_name);
 while($row_name = mysqli_fetch_array($cons_name)){
 	$name_group = $row_name[0];
 }
-
+// Si name_group está vacío, volver a index con aviso
 //FUNCION PARA EXTRAER EL RESUMEN DE VOTOS DE LA BASE DE DATOS
 
 //FUNCION RECIBIR VOTOS
@@ -90,6 +90,17 @@ function GuardarVotos(){
 			  background-color: #6495ED;
 			}
 		</style>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6978317-29"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-6978317-29');
+</script>
+
     </head>
     <body>
 		<div class="container">
@@ -265,13 +276,6 @@ function GuardarVotos(){
 	<script src="js/dataTables.bootstrap4.min.js"></script>
 	<script src="js/tablas-esc.js"></script>
 	<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-6978317-29', 'auto');
-		  ga('send', 'pageview');
 	
 		$('select').change(function() {
 			var myOpt = [];
