@@ -15,7 +15,7 @@ function clean($string) {
 	   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 $cod_tabla = rand_string(10);
-$reg_pass= "INSERT INTO esc_grupos (pass, id_grupo, nombre_grupo, creacion) VALUES ('".md5($_POST['inputPassword'])."', '".$cod_tabla."', '".$_POST['inputNombre']."', NOW())";
+$reg_pass= "INSERT INTO esc_grupos (id_grupo, nombre_grupo, creacion) VALUES ('".$cod_tabla."', '".$_POST['inputNombre']."', NOW())";
 	if (mysqli_query($_SESSION['con'], $reg_pass)or die(mysqli_error($_SESSION['con']))) {
 					echo "<div class=\"alert alert-success\" role=\"alert\"> </div>";
 				}else {
