@@ -15,14 +15,10 @@ if (!isset($_GET['id'])) {
 $id_grupo=$_GET['id'];
 $tabla = "esc_gr_".$_GET['id'];
 $tabla_paises = "esc_participantes";
-$query_tabla= "SELECT `id` FROM ".$tabla;
-$query_rows = mysqli_query($_SESSION['con'], $query_tabla);
-$votos_totales = mysqli_num_rows($query_rows);
-$sql_pass = "SELECT `pass`, `nombre_grupo` FROM `esc_grupos` WHERE `id_grupo` ='".$_GET['id']."'";
-$cons_pass = mysqli_query($_SESSION['con'],$sql_pass);
-while($row_pass = mysqli_fetch_array($cons_pass)){
-	$pass_actual = $row_pass[0];
-	$name_group = $row_pass[1];
+$sql_name = "SELECT `nombre_grupo` FROM `esc_grupos` WHERE `id_grupo` ='".$_GET['id']."'";
+$cons_name = mysqli_query($_SESSION['con'],$sql_name);
+while($row_name = mysqli_fetch_array($cons_name)){
+	$name_group = $row_name[0];
 }
 
 //FUNCION PARA EXTRAER EL RESUMEN DE VOTOS DE LA BASE DE DATOS
