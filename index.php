@@ -21,18 +21,23 @@
 
   gtag('config', 'UA-6978317-29');
 </script>
-
   </head>
-
   <body>
 
     <div class="container">
-	
+
       <form class="form-signin" enctype="multipart/form-data" id="envio" name="crear_grupo" action="php/process.php" method="post" oninput='inputPassRep.setCustomValidity(inputPass.value != inputPassRep.value ? "Las contraseñas no coinciden." : "")'>
         <img src="img/euro-logo.png" />
 		<br/>
 		<h2 class="form-signin-heading">Crea un grupo</h2>
         <br/>
+		<?php
+			if (isset($_GET['e'])){ ?>
+				<div class="alert alert-danger" role="alert">
+				  El grupo al que has intentado acceder no existe. Puede que hayas introducido mal la dirección, o que nunca haya existido. Pide que te vuelvan a dar el enlace, o crea tu propio grupo.
+				</div>
+		<?	}else {}
+		?>
 		<label for="inputNombre" class="sr-only">Nombre del grupo</label>
 		<br/>
         <input type="text" id="inputNombre" name="inputNombre" class="form-control" placeholder="Nombre del grupo" required>

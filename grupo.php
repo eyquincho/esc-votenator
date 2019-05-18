@@ -17,6 +17,9 @@ $tabla = "esc_gr_".$_GET['id'];
 $tabla_paises = "esc_participantes";
 $sql_name = "SELECT `nombre_grupo` FROM `esc_grupos` WHERE `id_grupo` ='".$_GET['id']."'";
 $cons_name = mysqli_query($_SESSION['con'],$sql_name);
+if(mysqli_num_rows($cons_name)== 0){
+   header("Location: index.php?e=404");
+}
 while($row_name = mysqli_fetch_array($cons_name)){
 	$name_group = $row_name[0];
 }
@@ -81,7 +84,7 @@ function GuardarVotos(){
     <head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Eurovision - <?php echo $name_group; ?></title>
+        <title>Eurovision - <?php echo $name_group; echo $papafrita;?></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/theme.bootstrap_4.css">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -108,7 +111,7 @@ function GuardarVotos(){
 		<div class="card-header">
 			<center><img src="img/euro-logo.png" style="height:50px" /><center>
 			<br/>
-			<center><p>Grupo de votación de <strong><?php echo $name_group; ?></strong></p><center>
+			<center><p>Grupo de votación de <strong><?php echo $name_group;?></strong></p><center>
 		</div>
 		<div class="card-block">
 		<?php 
