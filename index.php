@@ -36,7 +36,7 @@
 				<div class="alert alert-danger" role="alert">
 				  El grupo al que has intentado acceder no existe. Puede que hayas introducido mal la dirección, o que nunca haya existido. Pide que te vuelvan a dar el enlace, o crea tu propio grupo.
 				</div>
-		<?	}else {}
+		<?php	}else {}
 		?>
 		<label for="inputNombre" class="sr-only">Nombre del grupo</label>
 		<br/>
