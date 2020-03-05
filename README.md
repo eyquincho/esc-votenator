@@ -1,5 +1,5 @@
 # Descripción
-Con el objetivo de poder agrupar de una forma sencilla las votaciones durante el festival de Eurovisión, esta pequeña webapp permite de una forma sencilla e intuitiva crear un grupo que compartir con amigos mediante enlace o QR y recopilar ahi las votaciones para la final de Eurovision 2019.
+Con el objetivo de poder agrupar de una forma sencilla las votaciones durante el festival de Eurovisión, esta pequeña webapp permite de una forma sencilla e intuitiva crear un grupo que compartir con amigos mediante enlace o QR y recopilar ahi las votaciones para la final de Eurovision.
 
 # Instalación
 Crear una base de datos MySQL desde phpMyAdmin y poblarla con el contenido de [db/crear_tablas.sql](https://github.com/eyquincho/escvs/blob/master/db/crear_tablas.sql)
