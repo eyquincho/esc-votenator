@@ -3,7 +3,8 @@
 //13.05.2017
 session_start();
 ob_start();
-include("php/conDB.php");
+require_once ("config.php");
+require("php/conDB.php");
 conexionDB();
 mysqli_query ($_SESSION['con'],"SET NAMES 'utf8'");
 header('Content-Type: text/html; charset=UTF-8'); 
@@ -95,13 +96,13 @@ function GuardarVotos(){
 		</style>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6978317-29"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GOOGLE_ANALYTICS; ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-6978317-29');
+  gtag('config', '<?php echo GOOGLE_ANALYTICS; ?>');
 </script>
 
     </head>
