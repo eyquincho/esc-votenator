@@ -204,7 +204,7 @@ function GuardarVotos(){
 						while ($pais = mysqli_fetch_object($result_paises)){
 					?>
 				  	<tr>
-						<th scope="row"><img src="flags/<?php echo $pais->pais; ?>.png"/> <?php echo $pais->pais; ?></th>
+						<th scope="row"><img src="flags/<?php echo $pais->iso3; ?>.png"/> <?php echo $pais->pais; ?></th>
 						<th><strong><?php echo $pais->artista; ?></strong><br/><?php echo $pais->cancion; ?></th>
 						<td><a class="btn btn-danger" href="<?php echo $pais->video; ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></td>
 					</tr>					
@@ -240,10 +240,11 @@ function GuardarVotos(){
 					<?php
 					$ix=1;
 					while ($ix<=26){
-						$sql_paises="SELECT `pais` FROM $tabla_paises WHERE `id` = $ix";
+						$sql_paises="SELECT `pais`, `iso3` FROM $tabla_paises WHERE `id` = $ix";
 						$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
 							while ($pais = mysqli_fetch_array($result_paises)){
 								$nombre_pais = $pais[0];
+								$bandera_pais = $pais[1];
 							}
 						$sql_puntos="SELECT Sum(`$ix`) FROM `$tabla`";
 						$result_puntos=mysqli_query($_SESSION['con'], $sql_puntos);
@@ -252,7 +253,7 @@ function GuardarVotos(){
 							}
 					?>	
 					<tr>
-						<td><img src="flags/<?php echo $nombre_pais; ?>.png"/></td>
+						<td><img src="flags/<?php echo $bandera_pais; ?>.png"/></td>
 						<td><?php echo $nombre_pais; ?></td>
 						<td><?php echo $puntos_final; ?></td>
 					</tr>
