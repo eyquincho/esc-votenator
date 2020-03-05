@@ -9,5 +9,5 @@
 	define('DB_TABLA','');
 	
 // Configuración Google Analytics
-	define('GOOGLE_ANALYTICS','')
+	define('GOOGLE_ANALYTICS','');		
 ?>
