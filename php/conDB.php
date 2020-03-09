@@ -1,24 +1,18 @@
 ﻿<?php
-// definimos unas constanstes 
-// para la conexion a la DB
-define('_SERV','localhost'); // Servidor
-define('_USER',''); 	 // usuario de la DB
-define('_PASS',''); 		 // password de la DB
-define('_DATAB',''); 	 // nombre de la tabla
-
+require ("../config.php");
 // funcion para conexion a MYSQL
 function conexionDB()
 {
-   if (!($cnx=mysqli_connect(_SERV,_USER,_PASS))) {
+   if (!($cnx=mysqli_connect(DB_SERVIDOR,DB_USUARIO,DB_PASS))) {
       echo "Error conectando a la base de datos.";
       exit();
    }
-   if (!mysqli_select_db($cnx, _DATAB)) {
+   if (!mysqli_select_db($cnx, DB_TABLA)) {
       echo "Error seleccionando la base de datos.";
       exit();
    }
    return $cnx;
 }
-$linkcon=mysqli_connect(_SERV,_USER,_PASS,_DATAB);
+$linkcon=mysqli_connect(DB_SERVIDOR,DB_USUARIO,DB_PASS,DB_TABLA);
 $_SESSION['con']= $linkcon;
 ?>

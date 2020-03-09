@@ -1,3 +1,4 @@
+<?php require ("config.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -13,13 +14,13 @@
     <!-- Custom styles for this template -->
     <link href="css/estilo.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6978317-29"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GOOGLE_ANALYTICS; ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-6978317-29');
+  gtag('config', '<?php echo GOOGLE_ANALYTICS; ?>');
 </script>
   </head>
   <body>

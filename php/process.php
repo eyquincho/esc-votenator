@@ -3,7 +3,7 @@
 //13.03.2016
 session_start();
 ob_start();
-include("conDB.php");
+require("conDB.php");
 conexionDB();
 header('Content-Type: text/html; charset=UTF-8');
 

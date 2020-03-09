@@ -1,9 +1,8 @@
 <?php
-//Creado por Quincho, así que a saber...
-//13.05.2017
 session_start();
 ob_start();
-include("php/conDB.php");
+require_once ("config.php");
+require("php/conDB.php");
 conexionDB();
 mysqli_query ($_SESSION['con'],"SET NAMES 'utf8'");
 header('Content-Type: text/html; charset=UTF-8'); 
@@ -45,7 +44,7 @@ function GuardarVotos(){
 			$p2=$_POST['2puntos'];
 			$p1=$_POST['1puntos'];
 			
-			$array_duplicados = array($p12, $p9, $p8, $p7, $p6, $p5, $p4, $p3, $p2, $p1);
+			$array_duplicados = array($p12, $p10, $p8, $p7, $p6, $p5, $p4, $p3, $p2, $p1);
 			if(count(array_unique($array_duplicados))<count($array_duplicados))
 				{
 					echo "<div class=\"alert alert-danger\" role=\"alert\">No puedes votar por el mismo pais dos veces</div>";
@@ -95,13 +94,13 @@ function GuardarVotos(){
 		</style>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6978317-29"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GOOGLE_ANALYTICS; ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-6978317-29');
+  gtag('config', '<?php echo GOOGLE_ANALYTICS; ?>');
 </script>
 
     </head>
@@ -203,7 +202,7 @@ function GuardarVotos(){
 						while ($pais = mysqli_fetch_object($result_paises)){
 					?>
 				  	<tr>
-						<th scope="row"><img src="flags/<?php echo $pais->pais; ?>.png"/> <?php echo $pais->pais; ?></th>
+						<th scope="row"><img src="flags/<?php echo $pais->iso3; ?>.png"/> <?php echo $pais->pais; ?></th>
 						<th><strong><?php echo $pais->artista; ?></strong><br/><?php echo $pais->cancion; ?></th>
 						<td><a class="btn btn-danger" href="<?php echo $pais->video; ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></td>
 					</tr>					
@@ -228,21 +227,27 @@ function GuardarVotos(){
 			  </div>
 			<div class="modal-body">
 				<table id="clasificacion" class="table">
+
 				  <thead>
 					<tr>
-					  <th>Bandera</th>
+					  <th>#</th>
 					  <th>Pais</th>
 					  <th>Puntos</th>
 					</tr>
 				  </thead>
 				  <tbody>
 					<?php
+						//Contamos el número de participantes para hacer el While el número correcto de veces
+						$sql_contar_paises = "SELECT COUNT(id) AS subidas FROM $tabla_paises";
+						$result_contar_paises = mysqli_query($_SESSION['con'],$sql_contar_paises);
+						$contar_paises = mysqli_fetch_assoc($result_contar_paises);
 					$ix=1;
-					while ($ix<=26){
-						$sql_paises="SELECT `pais` FROM $tabla_paises WHERE `id` = $ix";
+					while ($ix<=$contar_paises['subidas']){
+						$sql_paises="SELECT `pais`, `iso3` FROM $tabla_paises WHERE `id` = $ix";
 						$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
 							while ($pais = mysqli_fetch_array($result_paises)){
 								$nombre_pais = $pais[0];
+								$bandera_pais = $pais[1];
 							}
 						$sql_puntos="SELECT Sum(`$ix`) FROM `$tabla`";
 						$result_puntos=mysqli_query($_SESSION['con'], $sql_puntos);
@@ -251,8 +256,8 @@ function GuardarVotos(){
 							}
 					?>	
 					<tr>
-						<td><img src="flags/<?php echo $nombre_pais; ?>.png"/></td>
-						<td><?php echo $nombre_pais; ?></td>
+						<td></td>
+						<td><img src="flags/<?php echo $bandera_pais; ?>.png"/> <?php echo " ".$nombre_pais; ?></td>
 						<td><?php echo $puntos_final; ?></td>
 					</tr>
 					<?php
