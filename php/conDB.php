@@ -1,5 +1,5 @@
 ﻿<?php
-require_once 'C:\xampp\htdocs\escvs\config.php';
+require ("../config.php");
 // funcion para conexion a MYSQL
 function conexionDB()
 {
