@@ -54,7 +54,7 @@ CREATE TABLE `esc_participantes` (
 -- Volcado de datos para la tabla `esc_participantes`
 --
 
-INSERT INTO `esc_participantes` (`id`, `pais`, `iso3` `artista`, `cancion`, `video`) VALUES
+INSERT INTO `esc_participantes` (`id`, `pais`, `iso3`, `artista`, `cancion`, `video`) VALUES
 (1, 'Malta', 'MAL', 'Michela', 'Chameleon', 'https://youtube.com/watch?v=mRwLt9HCjbk'),
 (2, 'Suecia', 'SWE', 'John Lundvik', 'Too Late For Love', 'https://youtube.com/watch?v=YKR2GiorZuQ');
 
