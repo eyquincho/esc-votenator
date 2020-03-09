@@ -1,6 +1,4 @@
 <?php
-//Creado por Quincho, así que a saber...
-//13.05.2017
 session_start();
 ob_start();
 require_once ("config.php");
@@ -46,7 +44,7 @@ function GuardarVotos(){
 			$p2=$_POST['2puntos'];
 			$p1=$_POST['1puntos'];
 			
-			$array_duplicados = array($p12, $p9, $p8, $p7, $p6, $p5, $p4, $p3, $p2, $p1);
+			$array_duplicados = array($p12, $p10, $p8, $p7, $p6, $p5, $p4, $p3, $p2, $p1);
 			if(count(array_unique($array_duplicados))<count($array_duplicados))
 				{
 					echo "<div class=\"alert alert-danger\" role=\"alert\">No puedes votar por el mismo pais dos veces</div>";
@@ -229,17 +227,22 @@ function GuardarVotos(){
 			  </div>
 			<div class="modal-body">
 				<table id="clasificacion" class="table">
+
 				  <thead>
 					<tr>
-					  <th>Bandera</th>
+					  <th>#</th>
 					  <th>Pais</th>
 					  <th>Puntos</th>
 					</tr>
 				  </thead>
 				  <tbody>
 					<?php
+						//Contamos el número de participantes para hacer el While el número correcto de veces
+						$sql_contar_paises = "SELECT COUNT(id) AS subidas FROM $tabla_paises";
+						$result_contar_paises = mysqli_query($_SESSION['con'],$sql_contar_paises);
+						$contar_paises = mysqli_fetch_assoc($result_contar_paises);
 					$ix=1;
-					while ($ix<=26){
+					while ($ix<=$contar_paises['subidas']){
 						$sql_paises="SELECT `pais`, `iso3` FROM $tabla_paises WHERE `id` = $ix";
 						$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
 							while ($pais = mysqli_fetch_array($result_paises)){
@@ -253,8 +256,8 @@ function GuardarVotos(){
 							}
 					?>	
 					<tr>
-						<td><img src="flags/<?php echo $bandera_pais; ?>.png"/></td>
-						<td><?php echo $nombre_pais; ?></td>
+						<td></td>
+						<td><img src="flags/<?php echo $bandera_pais; ?>.png"/> <?php echo " ".$nombre_pais; ?></td>
 						<td><?php echo $puntos_final; ?></td>
 					</tr>
 					<?php
