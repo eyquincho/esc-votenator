@@ -2,7 +2,7 @@
 	session_start();
 	ob_start();
 	require_once ("config.php");
-	require("php/conDB.php");
+	require("conDB.php");
 	conexionDB();
 	mysqli_query ($_SESSION['con'],"SET NAMES 'utf8'");
 	header('Content-Type: text/html; charset=UTF-8'); 
@@ -81,7 +81,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Eurovision - <?php echo $name_group;?></title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/theme.bootstrap_4.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<style>
@@ -99,23 +99,26 @@
 	</script>
 </head>
 <body>
-	<div class="container">
-		<div class="card">
+	<div class="container"><br />
+		<div class="card text-center">
 			<div class="card-header">
 				<center><img src="img/euro-logo.png" style="height:50px" /><center><br/>
 				<center><p>Grupo de votación de <strong><?php echo $name_group;?></strong></p><center>
 			</div>
-			<div class="card-block">
+			<div class="card-body">
 				<?php 
 					//Arrancamos todas las funciones que sean necesarias
 					GuardarVotos();
 				?>
-				<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#modal-paises"><i class="fa fa-globe" aria-hidden="true"> Ver paises participantes</i></button>
-				<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-votar"><i class="fa fa-envelope" aria-hidden="true"> Añade un nuevo voto</i></button>
-				<button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#modal-clasificacion"><i class="fa fa-signal" aria-hidden="true"> Ver clasificación</i></button>
-				<button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#modal-participantes"><i class="fa fa-users" aria-hidden="true"> Ver votaciones</i></button>
-				<center><strong>Envia la dirección de esta página a quien quieras, para que pueda participar, o escanea este QR.</strong></center>
-				<center><img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https%3A%2F%2Fwww.muruais.com%2Fesc%2Fgrupo.php%3Fid%3D<?php echo $id_grupo; ?>&choe=UTF-8" title="Codigo QR para compartir" /></center>
+				<button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#modal-paises"><i class="fa fa-globe" aria-hidden="true"> Ver paises participantes</i></button>
+				<button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#modal-votar"><i class="fa fa-envelope" aria-hidden="true"> Añade un nuevo voto</i></button>
+				<button type="button" class="btn btn-outline-secondary btn-block" data-toggle="modal" data-target="#modal-clasificacion"><i class="fa fa-signal" aria-hidden="true"> Ver clasificación</i></button>
+				<button type="button" class="btn btn-outline-warning btn-block" data-toggle="modal" data-target="#modal-participantes"><i class="fa fa-users" aria-hidden="true"> Ver votaciones</i></button>
+				<hr class="col-xs-12">
+				<strong>Envia la dirección de esta página a quien quieras, para que pueda participar, o escanea este QR.</strong><br />
+				<img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https%3A%2F%2Fwww.muruais.com%2Fesc%2Fgrupo.php%3Fid%3D<?php echo $id_grupo; ?>&choe=UTF-8" title="Codigo QR para compartir" />
+				<hr class="col-xs-12">
+				<a target="_blank" href="index.php">Crear otro grupo</a><br />
 				<!-- Modal añadir voto -->
 				<div class="modal fade" id="modal-votar" tabindex="-1" role="dialog" aria-labelledby="CabeceraVotar" aria-hidden="true">
 					<div class="modal-dialog" role="document">
@@ -126,8 +129,10 @@
 							<div class="modal-body">
 								<form enctype="multipart/form-data" id="envio" name="envio_votos" class="col-lg-12" action="grupo.php?id=<?php echo $id_grupo; ?>" method="post">
 									<label class="sr-only" for="Nombre">Mi nombre es</label>
-										<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-											<div class="input-group-addon">@</div>
+										<div class="input-group mb-3">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon1">@</span>
+											</div>
 											<input type="text" class="form-control" name="nombre" id="Nombre" placeholder="Nombre" required>
 										</div><br />
 										<span>... y por la gloria de Eurovision...</span><br />
@@ -141,8 +146,10 @@
 											foreach ($array as $valor) {
 										?>
 											<label class="sr-only" for="<?php echo $valor; ?>puntos"><?php echo $valor; ?> puntos</label>
-											<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-												<div class="input-group-addon"><?php echo $valor; ?></div>
+											<div class="input-group mb-3">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="basic-addon1"><?php echo $valor; ?></span>
+												</div>
 													<select class="form-control select" name="<?php echo $valor; ?>puntos" required>
 														<option value="">Le doy mis <?php echo $valor;?> puntos a...</option>
 															<?php
@@ -299,11 +306,15 @@
 				</div>	
 				<!-- Final modal votaciones -->
 			</div>
+			<div class="card-footer text-muted">
+				<a target="_blank" href="https://twitter.com/eyquincho">@EyQuincho</a> | <a target="_blank" href="https://github.com/eyquincho/escvs">GitHub</a> 
+			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap4.min.js"></script>
 	<script src="js/tablas-esc.js"></script>
