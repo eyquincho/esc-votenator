@@ -9,9 +9,9 @@ Copiar todo lo demás a la carpeta del servidor
 Para actualizar el listado de paises participantes, hay que hacerlo directamente desde la base de datos, actualizando la tabla esc_grupos. Puede que algún día cree una sección para administrador, pero para una herramienta que se va a utilizar una vez al año me parece un poco inútil. Invito a quien quiera a que lo haga.
 
 # Librerías
-- [jQuery](https://jquery.com/)
-- [Bootstrap](https://getbootstrap.com/)
-- [dataTables](https://datatables.net/)
-- [Tether](http://tether.io/)
-- [Font Awesome](https://fontawesome.com/)
+- [jQuery](https://jquery.com/) (cosas que se mueven)
+- [Bootstrap](https://getbootstrap.com/) (estructura)
+- [dataTables](https://datatables.net/) (todas las tablas)
+- [Tether](http://tether.io/) (select excluyente)
+- [Font Awesome](https://fontawesome.com/) (iconitos)
 - [Google APIs](https://developers.google.com/chart/) (para la generación del QR)
