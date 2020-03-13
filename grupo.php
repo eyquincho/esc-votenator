@@ -275,28 +275,32 @@
 								<h4 class="modal-title" id="CabeceraNewPlayer">Participantes en <?php echo $name_group;?></h4>
 							</div>
 							<div class="modal-body">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>Pais</th>
-											<th><strong>Artista</strong><br/>Canción</th>
-											<th>Video</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php
-											$sql_paises="SELECT * FROM $tabla_paises";
-											$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
-											while ($pais = mysqli_fetch_object($result_paises)){
-										?>
-										<tr>
-											<th scope="row"><img src="flags/<?php echo $pais->iso3; ?>.png"/> <?php echo $pais->pais; ?></th>
-											<th><strong><?php echo $pais->artista; ?></strong><br/><?php echo $pais->cancion; ?></th>
-											<td><a class="btn btn-danger" href="<?php echo $pais->video; ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></td>
-										</tr>					
-										<?php }?>
-									</tbody>
-								</table>
+								<div class="accordion" id="ListadoVotos">
+									<!-- ||| -->
+									<!-- ||| -->
+									<!-- ||| -->
+									<!-- Acordeon votos -->
+									<!-- Aqui va un while para rellenar-->
+									<div class="card">
+										<div class="card-header" id="cabeceraUsuario">
+											<h2 class="mb-0">
+												<button class="btn collapsed" type="button" data-toggle="collapse" data-target="#acordeonUsuario" aria-expanded="false" aria-controls="collapseOne">
+													Usuario
+												</button>
+											</h2>
+										</div>
+										<div id="acordeonUsuario" class="collapse" aria-labelledby="headingOne" data-parent="#ListadoVotos">
+											<div class="card-body">
+												 <span>12 puntos</span> - Guinea<br />
+												 <span>12 puntos</span> - Guinea
+											</div>
+										</div>
+									</div>
+									<!-- Acordeon votos -->
+									<!-- ||| -->
+									<!-- ||| -->
+									<!-- ||| -->
+								</div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
