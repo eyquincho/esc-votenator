@@ -179,7 +179,7 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h4 class="modal-title" id="CabeceraNewPlayer">Participantes</h4>
+								<h4 class="modal-title" id="CabeceraNewPlayer">Paises Participantes</h4>
 							</div>
 							<div class="modal-body">
 								<table class="table">
@@ -276,6 +276,14 @@
 							</div>
 							<div class="modal-body">
 								<div class="accordion" id="ListadoVotos">
+									<?php
+										// Abrimos un while que vaya por todas las filas de la tabla del grupo
+										// Imprimimos el nombre del votante en el botón que despliega el acordeón
+										// Abrimos una tabla dentro del desplegable
+										// Si el campo 1 es mayor que 0, imprimimos su valor en una linea de la tabla, si no, lo ignoramos
+										// Repetimos en las 26 columnas
+										// Adaptamos el formato de la tabla, para que esté ordenada de mayor a menor por puntos.
+									?>
 									<!-- ||| -->
 									<!-- ||| -->
 									<!-- ||| -->
