@@ -17,4 +17,16 @@ $(document).ready(function() {
             cell.innerHTML = i+1;
         } );
     } ).draw();
+	
+	var q = $('#votantes').DataTable( {
+        "columnDefs": [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": "_all"
+        } ],
+        "order": [[ 0, 'desc' ]],
+		paging: false,
+		"searching": false,
+		"sInfo": ""
+    } );
 });
