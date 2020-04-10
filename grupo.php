@@ -306,7 +306,7 @@
 													</div>
 													<div id="acordeonUsuario<?php echo $votante[0]; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#ListadoVotos">
 														<div class="card-body">
-														<table id="votantes" class="table">
+														<table id="votantes" class="table datavotante">
 														<thead>
 															<tr>
 																<th>Puntos</th>

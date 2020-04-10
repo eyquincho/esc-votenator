@@ -18,7 +18,7 @@ $(document).ready(function() {
         } );
     } ).draw();
 	
-	var q = $('#votantes').DataTable( {
+	var q = $('.datavotante').DataTable( {
         "columnDefs": [ {
             "searchable": false,
             "orderable": false,
