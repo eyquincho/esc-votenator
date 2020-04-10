@@ -122,7 +122,7 @@
 				<button type="button" class="btn btn-outline-warning btn-block" data-toggle="modal" data-target="#modal-participantes"><i class="fa fa-users" aria-hidden="true"> Ver votaciones</i></button>
 				<hr class="col-xs-12">
 				<strong>Envia la dirección de esta página a quien quieras, para que pueda participar, o escanea este QR.</strong><br />
-				<img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https%3A%2F%2Fwww.muruais.com%2Fesc%2Fgrupo.php%3Fid%3D<?php echo $id_grupo; ?>&choe=UTF-8" title="Codigo QR para compartir" />
+				<img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo urlencode("http://" . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']) ?>&choe=UTF-8" title="Codigo QR para compartir" />
 				<hr class="col-xs-12">
 				<a target="_blank" href="index.php">Crear otro grupo</a><br />
 				<!-- Modal añadir voto -->
