@@ -13,6 +13,12 @@
 	$id_grupo=$_GET['id'];
 	$tabla = "esc_gr_".$_GET['id'];
 	$tabla_paises = "esc_participantes";
+	// Contar el número de paises en la base de datos, para adaptar las consultas
+	$sql_contar_paises = "SELECT COUNT(id) AS unidades FROM $tabla_paises";
+	$result_contar_paises = mysqli_query($_SESSION['con'],$sql_contar_paises);
+	$contar_paises = mysqli_fetch_assoc($result_contar_paises);
+	$paises_participantes = $contar_paises['unidades'];
+	
 	$sql_name = "SELECT `nombre_grupo` FROM `esc_grupos` WHERE `id_grupo` ='".$_GET['id']."'";
 	$cons_name = mysqli_query($_SESSION['con'],$sql_name);
 	if(mysqli_num_rows($cons_name)== 0){
@@ -179,7 +185,7 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h4 class="modal-title" id="CabeceraNewPlayer">Participantes</h4>
+								<h4 class="modal-title" id="CabeceraNewPlayer">Paises Participantes</h4>
 							</div>
 							<div class="modal-body">
 								<table class="table">
@@ -230,12 +236,8 @@
 									</thead>
 									<tbody>
 										<?php
-											//Contamos el número de participantes para hacer el While el número correcto de veces
-											$sql_contar_paises = "SELECT COUNT(id) AS subidas FROM $tabla_paises";
-											$result_contar_paises = mysqli_query($_SESSION['con'],$sql_contar_paises);
-											$contar_paises = mysqli_fetch_assoc($result_contar_paises);
 											$ix=1;
-											while ($ix<=$contar_paises['subidas']){
+											while ($ix<=$paises_participantes){
 												$sql_paises="SELECT `pais`, `iso3` FROM $tabla_paises WHERE `id` = $ix";
 												$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
 												while ($pais = mysqli_fetch_array($result_paises)){
@@ -275,28 +277,75 @@
 								<h4 class="modal-title" id="CabeceraNewPlayer">Participantes en <?php echo $name_group;?></h4>
 							</div>
 							<div class="modal-body">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>Pais</th>
-											<th><strong>Artista</strong><br/>Canción</th>
-											<th>Video</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php
-											$sql_paises="SELECT * FROM $tabla_paises";
-											$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
-											while ($pais = mysqli_fetch_object($result_paises)){
-										?>
-										<tr>
-											<th scope="row"><img src="flags/<?php echo $pais->iso3; ?>.png"/> <?php echo $pais->pais; ?></th>
-											<th><strong><?php echo $pais->artista; ?></strong><br/><?php echo $pais->cancion; ?></th>
-											<td><a class="btn btn-danger" href="<?php echo $pais->video; ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></td>
-										</tr>					
-										<?php }?>
-									</tbody>
-								</table>
+								<div class="accordion" id="ListadoVotos">
+									<?php
+										// Abrimos un while que vaya por todas las filas de la tabla del grupo
+										// Contamos el número de votantes para hacer el while el número correcto de veces
+										$sql_contar_votantes = "SELECT COUNT(id) AS num FROM $tabla";
+										$result_contar_votantes = mysqli_query($_SESSION['con'],$sql_contar_votantes);
+										$contar_votantes = mysqli_fetch_assoc($result_contar_votantes);
+										// Hacemos un string para el query del while, con todos los números de los países participantes
+										$outall = "";
+										for ($x = 1; $x <= $paises_participantes; $x++) {
+											$outall .= ", `$x`";
+										}
+										
+										$iv=1;
+										while ($iv<=$contar_votantes['num']) {
+											$sql_votantes =	"SELECT `juez` $outall FROM $tabla WHERE `id` = $iv";
+											$result_votantes=mysqli_query($_SESSION['con'], $sql_votantes);
+											while ($votante = mysqli_fetch_array($result_votantes)){
+												?>
+												<div class="card">
+													<div class="card-header" id="cabeceraUsuario">
+														<h2 class="mb-0">
+															<button class="btn collapsed" type="button" data-toggle="collapse" data-target="#acordeonUsuario<?php echo $votante[0]; ?>" aria-expanded="false" aria-controls="collapseOne">
+																<?php echo $votante[0]; ?>
+															</button>
+														</h2>
+													</div>
+													<div id="acordeonUsuario<?php echo $votante[0]; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#ListadoVotos">
+														<div class="card-body">
+														<table id="votantes" class="table">
+														<thead>
+															<tr>
+																<th>Puntos</th>
+																<th>Pais</th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php
+																// Guardamos los nombres de los paises participantes en un array, para no tener que hacer consultas en cada linea de la tabla
+																$query_paises_participantes = "SELECT pais, iso3 FROM $tabla_paises";
+																$result_paises_participantes = mysqli_query($_SESSION['con'], $query_paises_participantes);
+																$pais_participante = array();
+																while($row = mysqli_fetch_assoc($result_paises_participantes))
+																{
+																		$pais_participante[] = $row['pais'];
+																		$bandera_participante[] = $row['iso3'];
+																}
+																$iz = 0;
+																while ($iz<$paises_participantes) {
+																	if ($votante[$iz]>0) {
+																		echo "<tr>";
+																		echo "<td>".$votante[$iz]."</td>";
+																		echo "<td><img src=\"flags/".$bandera_participante[$iz].".png\"/> ".$pais_participante[$iz]."</td>";
+																		echo "</tr>";
+																	}
+																	$iz++;
+																}
+															?>
+														</tbody>
+														</table>
+														</div>
+													</div>
+												</div>
+												<?php
+											}
+											$iv++;
+										}
+									?>
+								</div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
