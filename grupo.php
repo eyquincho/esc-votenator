@@ -6,12 +6,24 @@
 	conexionDB();
 	mysqli_query ($_SESSION['con'],"SET NAMES 'utf8'");
 	header('Content-Type: text/html; charset=UTF-8'); 
+	$id_grupo=$_GET['id'];
+	$tabla_puntuaciones = "esc_puntuaciones";
+	$tabla = "esc_gr_".$_GET['id'];
+	
 	// Revisar si hay un grupo indicado en la url, y si lo hay comprobar que existe
 	if (!isset($_GET['id'])) {
 		header("Location: index.php");
 	} else {}
-	$id_grupo=$_GET['id'];
-	$tabla = "esc_gr_".$_GET['id'];
+	$sql_nombre = "SELECT `nombre_grupo` FROM `esc_grupos` WHERE `id_grupo` ='".$id_grupo."'";
+	$cons_nombre = mysqli_query($_SESSION['con'],$sql_nombre);
+	if(mysqli_num_rows($cons_nombre)== 0){
+		header("Location: index.php?e=404");
+	}
+	while($row_nombre = mysqli_fetch_array($cons_nombre)){
+		$nombre_grupo = $row_nombre[0];
+	}
+	
+	
 	$tabla_paises = "esc_participantes";
 	// Contar el número de paises en la base de datos, para adaptar las consultas
 	$sql_contar_paises = "SELECT COUNT(id) AS unidades FROM $tabla_paises";
@@ -19,18 +31,11 @@
 	$contar_paises = mysqli_fetch_assoc($result_contar_paises);
 	$paises_participantes = $contar_paises['unidades'];
 	
-	$sql_name = "SELECT `nombre_grupo` FROM `esc_grupos` WHERE `id_grupo` ='".$_GET['id']."'";
-	$cons_name = mysqli_query($_SESSION['con'],$sql_name);
-	if(mysqli_num_rows($cons_name)== 0){
-		header("Location: index.php?e=404");
-	}
-	while($row_name = mysqli_fetch_array($cons_name)){
-		$name_group = $row_name[0];
-	}
+	
 	// +++++
 	// Función para guardar los votos de un usuario
 	// +++++
-	function GuardarVotos(){
+	function GuardarVotos($tabla, $grupo){
 		if (isset ($_POST['EnviarNuevoVoto'])){
 			if (!isset ($_POST['nombre'],$_POST['12puntos'],$_POST['10puntos'],$_POST['8puntos'],$_POST['7puntos'],$_POST['6puntos'],$_POST['5puntos'],$_POST['4puntos'],$_POST['3puntos'],$_POST['2puntos'],$_POST['1puntos'])) {
 				echo "<div class=\"alert alert-danger\" role=\"alert\">Debes añadir todos los votos, y tu nombre.</div>";
@@ -54,13 +59,12 @@
 					}else{
 				// Comprobar si el usuario ya ha votado
 				// Si no lo ha hecho, guardamos el voto
-				$tabla_grupo = "esc_gr_".$_GET['id'];
-				$sql_yaexiste="SELECT * FROM $tabla_grupo WHERE juez ='$juez'";
+				$sql_yaexiste="SELECT * FROM $tabla WHERE juez ='$juez'";
 				$result=mysqli_query($_SESSION['con'], $sql_yaexiste);
 				$teconozco = mysqli_num_rows($result);
 				switch ($teconozco) {
 					case 0:
-						$save_newvote= "INSERT INTO $tabla_grupo (`juez`, `$p12`, `$p10`,`$p8`,`$p7`,`$p6`,`$p5`,`$p4`,`$p3`,`$p2`,`$p1`) VALUES ('$juez', 12, 10, 8, 7, 6, 5, 4, 3, 2, 1)";
+						$save_newvote= "INSERT INTO $tabla (`juez`, `grupo`, `$p12`, `$p10`,`$p8`,`$p7`,`$p6`,`$p5`,`$p4`,`$p3`,`$p2`,`$p1`) VALUES ('$juez', '$grupo', 12, 10, 8, 7, 6, 5, 4, 3, 2, 1)";
 						if (mysqli_query($_SESSION['con'], $save_newvote)or die(mysqli_error($_SESSION['con']))) {
 							echo "<div class=\"alert alert-success\" role=\"alert\">Añadidos los votos de <strong>".$juez."</strong> correctamente</div>";
 						}else {
@@ -86,7 +90,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Eurovision - <?php echo $name_group;?></title>
+	<title>Eurovision - <?php echo $nombre_grupo;?></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/theme.bootstrap_4.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -109,12 +113,12 @@
 		<div class="card text-center">
 			<div class="card-header">
 				<center><img src="img/euro-logo.png" style="height:50px" /><center><br/>
-				<center><p>Grupo de votación de <strong><?php echo $name_group;?></strong></p><center>
+				<center><p>Grupo de votación de <strong><?php echo $nombre_grupo;?></strong></p><center>
 			</div>
 			<div class="card-body">
 				<?php 
 					//Arrancamos todas las funciones que sean necesarias
-					GuardarVotos();
+					GuardarVotos($tabla_puntuaciones, $id_grupo);
 				?>
 				<button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#modal-paises"><i class="fa fa-globe" aria-hidden="true"> Ver paises participantes</i></button>
 				<button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#modal-votar"><i class="fa fa-envelope" aria-hidden="true"> Añade un nuevo voto</i></button>
@@ -244,7 +248,7 @@
 													$nombre_pais = $pais[0];
 													$bandera_pais = $pais[1];
 												}
-												$sql_puntos="SELECT Sum(`$ix`) FROM `$tabla`";
+												$sql_puntos="SELECT Sum(`$ix`) FROM `$tabla_puntuaciones` WHERE `grupo` = '".$id_grupo."'";
 												$result_puntos=mysqli_query($_SESSION['con'], $sql_puntos);
 												while ($puntos = mysqli_fetch_array($result_puntos)){
 													$puntos_final = $puntos[0];
@@ -274,14 +278,14 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h4 class="modal-title" id="CabeceraNewPlayer">Participantes en <?php echo $name_group;?></h4>
+								<h4 class="modal-title" id="CabeceraNewPlayer">Participantes en <?php echo $nombre_grupo;?></h4>
 							</div>
 							<div class="modal-body">
 								<div class="accordion" id="ListadoVotos">
 									<?php
 										// Abrimos un while que vaya por todas las filas de la tabla del grupo
 										// Contamos el número de votantes para hacer el while el número correcto de veces
-										$sql_contar_votantes = "SELECT COUNT(id) AS num FROM $tabla";
+										$sql_contar_votantes = "SELECT COUNT(id) AS num FROM `$tabla_puntuaciones` WHERE `grupo` = '".$id_grupo."'";
 										$result_contar_votantes = mysqli_query($_SESSION['con'],$sql_contar_votantes);
 										$contar_votantes = mysqli_fetch_assoc($result_contar_votantes);
 										// Hacemos un string para el query del while, con todos los números de los países participantes
@@ -292,7 +296,7 @@
 										
 										$iv=1;
 										while ($iv<=$contar_votantes['num']) {
-											$sql_votantes =	"SELECT `juez` $outall FROM $tabla WHERE `id` = $iv";
+											$sql_votantes =	"SELECT `juez` $outall FROM `$tabla_puntuaciones` WHERE `id` = $iv AND `grupo` = '".$id_grupo."'";
 											$result_votantes=mysqli_query($_SESSION['con'], $sql_votantes);
 											while ($votante = mysqli_fetch_array($result_votantes)){
 												?>
@@ -324,8 +328,8 @@
 																		$pais_participante[] = $row['pais'];
 																		$bandera_participante[] = $row['iso3'];
 																}
-																$iz = 0;
-																while ($iz<$paises_participantes) {
+																$iz = 1;
+																while ($iz<=$paises_participantes) {
 																	if ($votante[$iz]>0) {
 																		echo "<tr>";
 																		echo "<td>".$votante[$iz]."</td>";
