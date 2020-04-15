@@ -8,7 +8,6 @@
 	header('Content-Type: text/html; charset=UTF-8'); 
 	$id_grupo=$_GET['id'];
 	$tabla_puntuaciones = "esc_puntuaciones";
-	$tabla = "esc_gr_".$_GET['id'];
 	
 	// Revisar si hay un grupo indicado en la url, y si lo hay comprobar que existe
 	if (!isset($_GET['id'])) {
@@ -59,7 +58,7 @@
 					}else{
 				// Comprobar si el usuario ya ha votado
 				// Si no lo ha hecho, guardamos el voto
-				$sql_yaexiste="SELECT * FROM $tabla WHERE juez ='$juez'";
+				$sql_yaexiste="SELECT * FROM $tabla WHERE juez ='$juez' AND grupo ='$grupo'";
 				$result=mysqli_query($_SESSION['con'], $sql_yaexiste);
 				$teconozco = mysqli_num_rows($result);
 				switch ($teconozco) {
@@ -120,10 +119,10 @@
 					//Arrancamos todas las funciones que sean necesarias
 					GuardarVotos($tabla_puntuaciones, $id_grupo);
 				?>
-				<button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#modal-paises"><i class="fa fa-globe" aria-hidden="true"> Ver paises participantes</i></button>
-				<button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#modal-votar"><i class="fa fa-envelope" aria-hidden="true"> Añade un nuevo voto</i></button>
-				<button type="button" class="btn btn-outline-secondary btn-block" data-toggle="modal" data-target="#modal-clasificacion"><i class="fa fa-signal" aria-hidden="true"> Ver clasificación</i></button>
-				<button type="button" class="btn btn-outline-warning btn-block" data-toggle="modal" data-target="#modal-participantes"><i class="fa fa-users" aria-hidden="true"> Ver votaciones</i></button>
+				<button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#modal-paises"><i class="fa fa-globe" aria-hidden="true"></i> Ver paises participantes</button>
+				<button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#modal-votar"><i class="fa fa-envelope" aria-hidden="true"></i> Añade un nuevo voto</button>
+				<button type="button" class="btn btn-outline-secondary btn-block" data-toggle="modal" data-target="#modal-clasificacion"><i class="fa fa-signal" aria-hidden="true"></i> Ver clasificación</button>
+				<button type="button" class="btn btn-outline-warning btn-block" data-toggle="modal" data-target="#modal-participantes"><i class="fa fa-users" aria-hidden="true"></i> Ver votaciones</button>
 				<hr class="col-xs-12">
 				<strong>Envia la dirección de esta página a quien quieras, para que pueda participar, o escanea este QR.</strong><br />
 				<img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo urlencode("http://" . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']) ?>&choe=UTF-8" title="Codigo QR para compartir" />
@@ -293,61 +292,53 @@
 										for ($x = 1; $x <= $paises_participantes; $x++) {
 											$outall .= ", `$x`";
 										}
-										
-										$iv=1;
-										while ($iv<=$contar_votantes['num']) {
-											$sql_votantes =	"SELECT `juez` $outall FROM `$tabla_puntuaciones` WHERE `id` = $iv AND `grupo` = '".$id_grupo."'";
-											$result_votantes=mysqli_query($_SESSION['con'], $sql_votantes);
-											while ($votante = mysqli_fetch_array($result_votantes)){
-												?>
-												<div class="card">
-													<div class="card-header" id="cabeceraUsuario">
-														<h2 class="mb-0">
-															<button class="btn collapsed" type="button" data-toggle="collapse" data-target="#acordeonUsuario<?php echo $votante[0]; ?>" aria-expanded="false" aria-controls="collapseOne">
-																<?php echo $votante[0]; ?>
-															</button>
-														</h2>
-													</div>
-													<div id="acordeonUsuario<?php echo $votante[0]; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#ListadoVotos">
-														<div class="card-body">
-														<table id="votantes" class="table datavotante">
-														<thead>
-															<tr>
-																<th>Puntos</th>
-																<th>Pais</th>
-															</tr>
-														</thead>
-														<tbody>
-															<?php
-																// Guardamos los nombres de los paises participantes en un array, para no tener que hacer consultas en cada linea de la tabla
-																$query_paises_participantes = "SELECT pais, iso3 FROM $tabla_paises";
-																$result_paises_participantes = mysqli_query($_SESSION['con'], $query_paises_participantes);
-																$pais_participante = array();
-																while($row = mysqli_fetch_assoc($result_paises_participantes))
-																{
-																		$pais_participante[] = $row['pais'];
-																		$bandera_participante[] = $row['iso3'];
-																}
-																$iz = 1;
-																while ($iz<=$paises_participantes) {
-																	if ($votante[$iz]>0) {
-																		echo "<tr>";
-																		echo "<td>".$votante[$iz]."</td>";
-																		echo "<td><img src=\"flags/".$bandera_participante[$iz].".png\"/> ".$pais_participante[$iz]."</td>";
-																		echo "</tr>";
-																	}
-																	$iz++;
-																}
-															?>
-														</tbody>
-														</table>
-														</div>
+										$sql_votantes =	"SELECT `juez` $outall FROM `$tabla_puntuaciones` WHERE `grupo` = '".$id_grupo."'";
+										$result_votantes=mysqli_query($_SESSION['con'], $sql_votantes);
+										while ($votante = mysqli_fetch_array($result_votantes)){
+											?>
+											<div class="card">
+												<div class="card-header" id="cabeceraUsuario">
+													<h2 class="mb-0">
+														<button class="btn collapsed" type="button" data-toggle="collapse" data-target="#acordeonUsuario<?php echo $votante[0]; ?>" aria-expanded="false" aria-controls="collapseOne">
+															<?php echo $votante[0]; ?>
+														</button>
+													</h2>
+												</div>
+												<div id="acordeonUsuario<?php echo $votante[0]; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#ListadoVotos">
+													<div class="card-body">
+													<table id="votantes" class="table datavotante">
+													<thead>
+														<tr>
+															<th>Puntos</th>
+															<th>Pais</th>
+														</tr>
+													</thead>
+													<tbody>
+														<?php
+															// Guardamos los nombres de los paises participantes en un array, para no tener que hacer consultas en cada linea de la tabla
+															$query_paises_participantes = "SELECT pais, iso3 FROM $tabla_paises";
+															$result_paises_participantes = mysqli_query($_SESSION['con'], $query_paises_participantes);
+															$pais_participante = array();
+															while($row = mysqli_fetch_assoc($result_paises_participantes)){
+																$pais_participante[] = $row['pais'];
+																$bandera_participante[] = $row['iso3'];
+															}
+															for ($iz = 1; $iz < $paises_participantes; $iz++) {
+																if ($votante[$iz]>0){
+																	echo "<tr>";
+																	echo "<td>".$votante[$iz]."</td>";
+																	echo "<td><img src=\"flags/".$bandera_participante[$iz].".png\"/> ".$pais_participante[$iz]."</td>";
+																	echo "</tr>";
+																}else{}
+															}
+														?>
+													</tbody>
+													</table>
 													</div>
 												</div>
-												<?php
-											}
-											$iv++;
-										}
+											</div>
+											<?php
+										}										
 									?>
 								</div>
 							</div>
