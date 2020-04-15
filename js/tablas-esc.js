@@ -9,6 +9,7 @@ $(document).ready(function() {
         "order": [[ 2, 'desc' ]],
 		paging: false,
 		"searching": false,
+		"bInfo" : false,
 		"sInfo": ""
     } );
  
@@ -27,6 +28,7 @@ $(document).ready(function() {
         "order": [[ 0, 'desc' ]],
 		paging: false,
 		"searching": false,
+		"bInfo" : false,
 		"sInfo": ""
     } );
 });
