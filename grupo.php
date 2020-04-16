@@ -146,7 +146,7 @@
 										</div><br />
 										<span>... y por la gloria de Eurovision...</span><br />
 										<?php
-											$query_participantes= "SELECT `id`, `pais` FROM `esc_participantes`";
+											$query_participantes= "SELECT `id`, `pais` FROM `esc_participantes` ORDER BY `id`";
 											$result_participantes= mysqli_query ($_SESSION['con'],$query_participantes);
 											while($row = mysqli_fetch_array($result_participantes)){
 													$paises[]=$row;
@@ -201,7 +201,7 @@
 									</thead>
 									<tbody>
 										<?php
-											$sql_paises="SELECT * FROM $tabla_paises";
+											$sql_paises="SELECT * FROM $tabla_paises ORDER BY `id`";
 											$result_paises=mysqli_query($_SESSION['con'], $sql_paises);
 											while ($pais = mysqli_fetch_object($result_paises)){
 										?>
