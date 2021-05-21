@@ -294,6 +294,14 @@
 										}
 										$sql_votantes =	"SELECT `juez` $outall FROM `$tabla_puntuaciones` WHERE `grupo` = '".$id_grupo."'";
 										$result_votantes=mysqli_query($_SESSION['con'], $sql_votantes);
+										// Guardamos los nombres de los paises participantes en un array, para no tener que hacer consultas en cada linea de la tabla
+											$query_paises_participantes = "SELECT pais, iso3 FROM $tabla_paises ORDER BY id";
+											$result_paises_participantes = mysqli_query($_SESSION['con'], $query_paises_participantes);
+											$pais_participante = array();
+											while($row = mysqli_fetch_assoc($result_paises_participantes)){
+												$pais_participante[] = $row['pais'];
+												$bandera_participante[] = $row['iso3'];
+											}
 										while ($votante = mysqli_fetch_array($result_votantes)){
 											?>
 											<div class="card">
@@ -315,22 +323,17 @@
 													</thead>
 													<tbody>
 														<?php
-															// Guardamos los nombres de los paises participantes en un array, para no tener que hacer consultas en cada linea de la tabla
-															$query_paises_participantes = "SELECT pais, iso3 FROM $tabla_paises";
-															$result_paises_participantes = mysqli_query($_SESSION['con'], $query_paises_participantes);
-															$pais_participante = array();
-															while($row = mysqli_fetch_assoc($result_paises_participantes)){
-																$pais_participante[] = $row['pais'];
-																$bandera_participante[] = $row['iso3'];
-															}
-															for ($iz = 1; $iz < $paises_participantes; $iz++) {
-																if ($votante[$iz]>0){
-																	echo "<tr>";
-																	echo "<td>".$votante[$iz]."</td>";
-																	echo "<td><img src=\"flags/".$bandera_participante[$iz].".png\"/> ".$pais_participante[$iz]."</td>";
-																	echo "</tr>";
-																}else{}
-															}
+																$array = array(12, 10, 8, 7, 6, 5, 4, 3, 2, 1);
+																foreach ($array as $voto) {
+																	for ($iz = 1; $iz <= $paises_participantes ; $iz++) {
+																		if ($votante[$iz]==$voto){
+																			echo "<tr>";
+																			echo "<td>".$votante[$iz]."</td>";
+																			echo "<td><img src=\"flags/".$bandera_participante[$iz-1].".png\"/> ".$pais_participante[$iz-1]."</td>";
+																			echo "</tr>";
+																		}else{}
+																	}
+																}
 														?>
 													</tbody>
 													</table>
