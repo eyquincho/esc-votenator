@@ -303,16 +303,17 @@
 												$bandera_participante[] = $row['iso3'];
 											}
 										while ($votante = mysqli_fetch_array($result_votantes)){
+											$identificador_votante = str_replace(' ', '_', $votante[0]);
 											?>
 											<div class="card">
 												<div class="card-header" id="cabeceraUsuario">
 													<h2 class="mb-0">
-														<button class="btn collapsed" type="button" data-toggle="collapse" data-target="#acordeonUsuario<?php echo $votante[0]; ?>" aria-expanded="false" aria-controls="collapseOne">
+														<button class="btn collapsed" type="button" data-toggle="collapse" data-target="#acordeonUsuario<?php echo $identificador_votante; ?>" aria-expanded="false" aria-controls="collapseOne">
 															<?php echo $votante[0]; ?>
 														</button>
 													</h2>
 												</div>
-												<div id="acordeonUsuario<?php echo $votante[0]; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#ListadoVotos">
+												<div id="acordeonUsuario<?php echo $identificador_votante; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#ListadoVotos">
 													<div class="card-body">
 													<table id="votantes" class="table datavotante">
 													<thead>
